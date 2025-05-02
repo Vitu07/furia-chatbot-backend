@@ -10,7 +10,8 @@ services:
       - key: PANDASCORE_API_TOKEN
         sync: false
     region: oregon
-    buildCommand: pip install --upgrade pip
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
     startCommand: ./start.sh
 version: "1"
