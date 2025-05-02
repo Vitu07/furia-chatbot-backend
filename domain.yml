@@ -1,0 +1,171 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - players_info
+  - player_specific
+  - ask_player_status
+  - titles
+  - ask_social_media
+  - sing_song
+  - ask_live_match
+  - next_match
+  - out_of_scope
+  - next_tournaments
+  - nlu_fallback
+
+entities:
+  - player
+  - bench_player
+
+slots:
+  player:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: player
+
+  bench_player:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: bench_player
+
+responses:
+  utter_greet:
+    - text: "Olá! Eu sou o Furico-BOT, mascote e torcedor da FURIA. No que posso ajudar?"
+    - text: "Salvee! Pronto para trocar um ideia sobre a FURIA?"
+    - text: "E aí! Bora conversar sobre CS?"
+    - text: "Fala Furioso! Oque você quer saber sobre o time de CS da FURIA?"
+    - text: "Pronto para falar sobre a FURIA CS?"
+
+  utter_goodbye:
+    - text: "Até logo! Acompanhe a FURIA nas redes sociais."
+    - text: "Falouuu! Volte sempre que quiser trocar uma ideia."
+    - text: "Até mais! Continue acompanhando a FURIA nas redes."
+    - text: "Valeu! Fique de olho nos próximos jogos da FURIA."
+
+  utter_players_info:
+    - text: "O time de CS da FURIA consiste em: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR e o técnico sidde."
+    - text: "Atualmente jogam pela FURIA: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR, com sidde como técnico."
+    - text: "Elenco principal: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR. Técnico: sidde."
+    - text: "Lineup da FURIA: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR. Comando: sidde."
+    - text: "Os jogadores da FURIA são: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR. Técnico: sidde."
+    - text: "Atualmente defendendo a FURIA: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR. Equipe técnica: sidde."
+    - text: "Formação atual: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR. Liderados por sidde."
+    - text: "Os atletas do time de CS da FURIA: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR. Técnico: sidde."
+    - text: "FURIA CS2 conta com: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR e o técnico sidde."
+    - text: "Jogadores atuais da FURIA: FalleN, KSCERATO, yuurih, molodoy, YEKINDAR. No comando: sidde."
+
+  utter_ask_player_status:
+    - text: "Atualmente, {bench_player} está no banco de reservas da FURIA após mudanças na lineup."
+    - text: "{bench_player} foi movido para a reserva com a chegada de novos jogadores como molodoy e YEKINDAR."
+    - text: "No momento, {bench_player} não faz parte da lineup ativa da FURIA e está como jogador reserva."
+
+  utter_titles:
+    - text: |
+        Principais títulos da FURIA CS:
+        • ESL Pro League Season 12: North America (2020)  
+        • IEM New York 2020 North America  
+        • DreamHack Masters Spring 2020 NA  
+        • 4º no IEM Rio Major 2022
+
+    - text: |
+        Conquistas históricas:
+        • ESL Pro League S12 NA (2020)  
+        • IEM New York NA (2020)  
+        2x Campeã DreamHack (Spring/Summer 2020)  
+        Semifinal no IEM Rio Major 2022
+
+    - text: |
+        Feitos da FURIA:
+        - 4 títulos S-tier em 2020  
+        - Melhor ranking: #3 mundial (HLTV)
+
+  utter_next_tournaments:
+    - text: |
+        Próximos campeonatos que a FURIA irá participar:
+        🏆 **PGL Astana 2025**  
+        📅 10 de Maio - 18 de Maio
+
+        🏆 **IEM Dallas 2025**  
+        📅 19 de Maio - 25 de Maio
+
+        🏆 **BLAST.tv Austin Major 2025 Stage 2**  
+        📅 7 de Junho - 10 de Junho
+
+        Fique ligado para mais atualizações!
+
+    - text: |
+        Aqui estão os próximos 3 torneios da FURIA:
+
+        🔥 PGL Astana 2025 (10–18/05)  
+        🔥 IEM Dallas 2025 (19–25/05)  
+        🔥 BLAST.tv Austin Major Stage 2 (07–10/06)  
+
+        Não perca nenhuma partida!
+
+  utter_social_media:
+    - text: |
+        📲 Redes oficiais da FURIA:
+        • Twitter: @FURIA (oficial)  
+        • Instagram: @furiagg  
+        • YouTube: FURIAggCS (conteúdo de CS)  
+        • TikTok: @furiagg e @furia  
+        • Site oficial: www.furia.gg
+        Acompanhe para não perder nada!
+
+    - text: |
+        Melhores lugares para acompanhar a FURIA:
+
+        🔵 Twitter: @FURIA  
+        📸 Instagram: @furiagg  
+        ▶️ YouTube: FURIAggCS  
+        🎵 TikTok: @furiagg e @furia
+
+  utter_sing_song:
+    - text: |
+        🎵 A FURIA veio para vencer,  
+        a FURIA veio, a FURIA veio para vencer!  
+        E o outro time se... *ops* 😅
+
+        POROPOPO POPOPOPO! POROPOPOPO POPOPOPO! 🎶
+
+    - text: |
+        🎤 *Ahem*... Preparando os vocais!  
+
+        🎶 A FURIA veio pra ganhar,  
+        Os adversários se... (Desculpe, mas o horário não permite a versão completa 😅)!  
+
+        POROPOPO POPOPOPO! 🎵
+
+    - text: |
+        🎵 VOU TORCER PRA FURIA SER CAMPEÃO,  
+        LA TRIBONEIRA, MEU CALDEIRÃOOOOOOO! 🎶  
+
+        Essa daí me deu até um saudade do major do RIO 😄🖤
+
+  utter_out_of_scope:
+    - text: "Ainda não consigo falar sobre isso. Tente perguntar algo relacionado à FURIA CS. 🖤"
+    - text: "Hmm, esse assunto não faz parte do meu repertório. Que tal saber algo sobre o time da FURIA?"
+    - text: "Não sei sobre isso, mas posso te contar tudo sobre a FURIA CS!"
+
+  utter_default:
+    - text: "Não consegui entender. Quer tentar perguntar de outra forma?"
+    - text: "Ops! Não captei isso. Pode reformular?"
+    - text: "Desculpe, não entendi. Tente algo como 'Quem joga na FURIA?' ou 'Quando é o próximo jogo?'"
+    - text: "Hmm, não consegui processar. Quer saber algo sobre os jogadores, resultados ou campeonatos?"
+    - text: "Vish, não peguei essa. Me pergunte sobre o time de CS da FURIA!"
+    - text: "Parece que fugiu do meu conhecimento CS. Foco no jogo! Que tal perguntar sobre o lineup atual?"
+
+actions:
+  - action_next_match
+  - action_live_match
+  - action_player_specific
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,80 @@
+version: "3.1"
+
+stories:
+  - story: Greet and ask for players
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: players_info
+      - action: utter_players_info
+
+  - story: Ask about a specific player
+    steps:
+      - intent: player_specific
+        entities:
+          - player: "YEKINDAR"
+      - action: action_player_specific
+
+  - story: Ask about the status of chelo
+    steps:
+      - intent: ask_player_status
+        entities:
+          - player: "chelo"
+      - action: utter_ask_player_status
+
+  - story: Ask about titles
+    steps:
+      - intent: titles
+      - action: utter_titles
+
+  - story: Check live match
+    steps:
+      - intent: ask_live_match
+      - action: action_live_match
+
+  - story: Check live match and then next match
+    steps:
+      - intent: ask_live_match
+      - action: action_live_match
+      - intent: ask_next_match
+      - action: action_next_match
+
+  - story: Ask about next tournaments
+    steps:
+      - intent: next_tournaments
+      - action: utter_next_tournaments
+
+  - story: parting flow
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+      - action: utter_social_media
+
+  - story: Greet and ask about social media
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_social_media
+      - action: utter_social_media
+
+  - story: After match info ask social media
+    steps:
+      - intent: next_match
+      - action: action_next_match
+      - intent: ask_social_media
+      - action: utter_social_media
+
+  - story: Ask bot to sing
+    steps:
+      - intent: sing_song
+      - action: utter_sing_song
+
+  - story: Ask about next match
+    steps:
+      - intent: next_match
+      - action: action_next_match
+
+  - story: Fallback intent (unknown query)
+    steps:
+      - intent: fallback
+      - action: utter_fallback
