@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: furia-chatbot
+    runtime: python
+    repo: https://github.com/Vitu07/furia-chatbot-backend
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        sync: false
+      - key: PANDASCORE_API_TOKEN
+        sync: false
+    region: oregon
+    buildCommand: pip install --upgrade pip
+    buildCommand: pip install -r requirements.txt
+    startCommand: ./start.sh
+version: "1"
