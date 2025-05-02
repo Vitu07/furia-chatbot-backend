@@ -1,10 +1,11 @@
 import requests
 from datetime import datetime, timezone
 import pytz
+import os
 
 def get_next_furia_match():
-    API_TOKEN = 'xqFHFnKz8ur7msHK80sEcSsD7eISp4Atx3qQ0XcZJxnmZfx_Hx4'
-    FURIA_ID = 3455  # ID da Vitality (teste)
+    API_TOKEN = os.environ.get('PANDASCORE_API_TOKEN')
+    FURIA_ID = 124530
     url = f'https://api.pandascore.co/csgo/matches/upcoming?filter[opponent_id]={FURIA_ID}&token={API_TOKEN}'
 
     try:
