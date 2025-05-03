@@ -1,5 +1,2 @@
 action_endpoint:
   url: "http://localhost:5055/webhook"
-
-rest:
-  url: "http://localhost:5005/webhooks/rest/webhook"
