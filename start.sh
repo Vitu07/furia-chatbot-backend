@@ -16,11 +16,13 @@ fi
 
 # =============== INICIA RASA ===============
 echo "🔄 Iniciando Rasa na porta $PORT..."
+
 rasa run \
   --model models \
   --enable-api \
   --cors "*" \
   --port $PORT \
+  --host 0.0.0.0 \  # Ensure it binds to all interfaces
   --debug  # Modo debug do Rasa
 
 # Se o servidor crashar:
