@@ -1,5 +1,5 @@
 action_endpoint:
-  url: "https://furia-chatbot-2hr9.onrender.com/webhook"
+  url: "https://furia-chatbot-2hr9.onrender.com/webhook/actions"
 
 rest:
   url: "https://furia-chatbot-2hr9.onrender.com/webhooks/rest/webhook"
