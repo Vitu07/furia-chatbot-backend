@@ -22,8 +22,8 @@ rasa run \
   --enable-api \
   --cors "*" \
   --port $PORT \
-  --host 0.0.0.0 \  # Ensure it binds to all interfaces
-  --debug  # Modo debug do Rasa
-
+  --host 0.0.0.0 \
+  --debug
+  
 # Se o servidor crashar:
 echo "❌ Rasa parou inesperadamente. Verifique os logs acima."

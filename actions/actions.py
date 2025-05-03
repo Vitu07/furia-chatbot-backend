@@ -3,7 +3,16 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from actions.player_info import PlayerInfo
 from .next_matches import get_next_furia_match
-from .live_match import get_live_furia_match 
+from .live_match import get_live_furia_match
+from sanic import Sanic
+from sanic.response import json
+
+
+app = Sanic("action_server")
+
+@app.head("/")
+async def health_check(request):
+    return json({"status": "ok"})
 
 class ActionNextMatch(Action):
     def name(self) -> Text:
