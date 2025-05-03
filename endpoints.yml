@@ -1,2 +1,5 @@
 action_endpoint:
   url: "http://localhost:5055/webhook"
+
+rest:
+  url: "https://furia-chatbot-2hr9.onrender.com/webhooks/rest/webhook"
