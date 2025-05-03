@@ -2,13 +2,16 @@ import subprocess
 import time
 import os
 
-# Inicia o servidor de ações em segundo plano
-print("Iniciando o servidor de ações...")
-actions_process = subprocess.Popen(["rasa", "run", "actions"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+# Pega a porta da variável de ambiente (Render fornece automaticamente)
+port = os.environ.get("PORT", 10000)
 
-# Espera alguns segundos para garantir que as actions subam primeiro
+# Inicia o servidor de ações
+print("Iniciando o servidor de ações...")
+subprocess.Popen(["rasa", "run", "actions"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+# Espera o servidor de ações iniciar
 time.sleep(5)
 
-# Inicia o servidor principal da API Rasa
-print("Iniciando o servidor principal...")
-os.system("rasa run --enable-api --cors \"*\" --port 12000")
+# Inicia o servidor principal na porta fornecida pelo Render
+print(f"Iniciando o servidor principal na porta {port}...")
+os.system(f"rasa run --enable-api --cors '*' --port {port}")
