@@ -1,3 +1,3 @@
-rasa run actions --port 5055 &
+rasa run actions &
 
-rasa run --enable-api --cors "*" --port $PORT
+rasa run --enable-api --cors "*" --port $PORT --model models/<20250502-164552-quick-phrase>.tar.gz
