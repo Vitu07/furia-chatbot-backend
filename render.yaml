@@ -1,3 +1,4 @@
+# Exported from Render on 2025-05-04T11:45:39Z
 services:
   - type: web
     name: furia-chatbot
@@ -5,6 +6,10 @@ services:
     repo: https://github.com/Vitu07/furia-chatbot-backend
     plan: free
     envVars:
+      - key: PORT
+        sync: false
+      - key: PYTHONUNBUFFERED
+        sync: false
       - key: PYTHON_VERSION
         sync: false
       - key: PANDASCORE_API_TOKEN
@@ -13,5 +18,6 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-    startCommand: ./start.sh
+    startCommand: rasa run --enable-api --port 5005 --cors "*" --debug
+    autoDeploy: false
 version: "1"
